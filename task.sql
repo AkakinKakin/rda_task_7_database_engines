@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS ShopDB;
 CREATE DATABASE ShopDB; 
 USE ShopDB; 
 
@@ -33,8 +34,7 @@ CREATE TABLE Logs(
 
 -- Create a table for storing reporting data, which will be send to a separate application in the CSV format for analytics purposes (Columns:  Date, ProductName, Orders)
 CREATE TABLE ProductReporting(
-	ID INT PRIMARY KEY,
-	Date DATE,
-    ProductName VARCHAR(50),
-    Orders INT
-)ENGINE=CSV;
+    Date DATE NOT NULL,
+    ProductName VARCHAR(50) NOT NULL,
+    Orders INT NOT NULL
+) ENGINE=CSV;
