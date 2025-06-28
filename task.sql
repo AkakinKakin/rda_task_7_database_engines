@@ -12,7 +12,7 @@ CREATE TABLE Countries (
 CREATE TABLE GeoIPCache(
 	ID INT PRIMARY KEY,
     IPRange VARCHAR(35),
-    CountryID INT,
+    CountryID INT
     
 ) ENGINE=Memory;
 
