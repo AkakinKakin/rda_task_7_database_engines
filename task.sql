@@ -10,16 +10,15 @@ CREATE TABLE Countries (
 
 -- Create a table for caching GeoIP data (Columns: ID, IP Range, CountryID)
 CREATE TABLE GeoIPCache(
-	ID INT,
+	ID INT PRIMARY KEY,
     IPRange VARCHAR(35),
     CountryID INT,
     
-    PRIMARY KEY (ID)
 ) ENGINE=Memory;
 
 -- Create a table for storing product descriptions for different countries (Columns: ID, CountryID, ProductID, Description )
 CREATE TABLE ProductDescription(
-	ID INT,
+	ID INT PRIMARY KEY,
     CountryID INT,
     ProductID INT,
     Description VARCHAR(50)
@@ -27,7 +26,7 @@ CREATE TABLE ProductDescription(
 
 -- Create a table for storing logs. For now we don't need to save them, but we need to implement functionality (Columns: ID, Time, LogRecord)
 CREATE TABLE Logs(
-	ID INT,
+	ID INT PRIMARY KEY,
     Time TIMESTAMP,
     LogRecord VARCHAR(50)
 ) ENGINE=Blackhole;
@@ -36,5 +35,5 @@ CREATE TABLE Logs(
 CREATE TABLE ProductReporting(
 	Date DATE,
     ProductName VARCHAR(50),
-    Orders VARCHAR(50)
+    Orders INT
 )ENGINE=CSV;
